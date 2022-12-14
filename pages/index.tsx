@@ -4,6 +4,7 @@ import { OrbitControls, Stats, useTexture } from "@react-three/drei";
 import Lights from "../components/Light";
 import Ground from "../components/Ground";
 import  Trees from '../components/Trees';
+import Player from "../components/Player";
 
 const Home: NextPage = () => {
   const testing = true
@@ -18,10 +19,9 @@ const Home: NextPage = () => {
       </> : null}
       <OrbitControls />
       <Trees boundary={50} count={50} />
-      
       <Lights />
       <Ground />
-    
+      <Player />
     </Canvas>
     </div>
   )

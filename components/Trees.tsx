@@ -15,7 +15,7 @@ type TreesProps = {
 
 const Trees: React.FC<TreesProps> = ({count, boundary}) => {
   const [trees, setTrees] = useState<TreeType[]>([])
-
+  
   const model = useLoader(GLTFLoader, "/models/tree.glb")
   model.scene.castShadow = true
   model.scene.receiveShadow = true
@@ -43,7 +43,6 @@ const Trees: React.FC<TreesProps> = ({count, boundary}) => {
     tree: TreeType,
     trees: TreeType[]
   ) => {
-    console.log(tree.position);
     const minTargetX = tree.position.x - tree.box / 2;
     const maxTargetX = tree.position.x + tree.box / 2;
     const minTargetZ = tree.position.z - tree.box / 2;
@@ -66,7 +65,6 @@ const Trees: React.FC<TreesProps> = ({count, boundary}) => {
           maxChildZ
         )
       ) {
-        console.log("Content Overlapped", tree.position )
         return true
       }
     }
