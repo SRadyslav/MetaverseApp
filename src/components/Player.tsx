@@ -67,6 +67,7 @@ const Player = () => {
         cameraTarget.x = model.scene.position.x
         cameraTarget.y = model.scene.position.y + 2
         cameraTarget.z = model.scene.position.z
+        //@ts-ignore
         if(controlRef.current) controlRef.current.target = cameraTarget
     }
 
@@ -132,6 +133,7 @@ const Player = () => {
 
     return (
         <>
+        {/*@ts-ignore*/}
         <OrbitControls ref={controlRef} />
         <primitive  object={model.scene} />
         </>
