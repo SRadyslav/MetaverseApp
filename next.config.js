@@ -2,7 +2,7 @@
 const nextConfig = {
   swcMinify: false,
   experimental: {
-    appDir: false,git 
+    appDir: false,
   },
 }
 
