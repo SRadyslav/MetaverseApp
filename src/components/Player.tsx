@@ -48,7 +48,7 @@ const directionOffset = ({forward, backward, left, right}: DirectionOffSet ) => 
 }
 
 const Player = () => {
-    const model = useGLTF("/models/player.glb")
+    const model = useGLTF("models/player.glb")
     const {actions} = useAnimations(model.animations, model.scene)
     const {forward,backward,jump,left,right,shift} = useKeys()
     model.scene.scale.set(2,2,2)

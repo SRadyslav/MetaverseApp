@@ -16,7 +16,7 @@ type TreesProps = {
 const Trees: React.FC<TreesProps> = ({count, boundary}) => {
   const [trees, setTrees] = useState<TreeType[]>([])
   
-  const model = useLoader(GLTFLoader, "/models/tree.glb")
+  const model = useLoader(GLTFLoader, "models/tree.glb")
   model.scene.castShadow = true
   model.scene.receiveShadow = true
 
