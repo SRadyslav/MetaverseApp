@@ -1,5 +1,6 @@
 import { Vector3, Quaternion} from "three"
 import { OrbitControls, useAnimations, useGLTF } from "@react-three/drei"
+import type { OrbitControls as OrbitControlsType } from 'three-stdlib'
 import { useFrame, useThree } from "@react-three/fiber"
 import { useEffect, useRef } from "react"
 import { useKeys } from "../hooks/useKeys"
@@ -55,7 +56,7 @@ const Player = () => {
     model.scene.visible = true
     
     const currentAction = useRef("")
-    const controlRef = useRef<typeof OrbitControls>()
+    const controlRef = useRef<OrbitControlsType>(null)
     const camera = useThree((state)=> state.camera)
 
     const updateCameraTarget = (moveX:number, moveZ:number) => {
@@ -67,7 +68,6 @@ const Player = () => {
         cameraTarget.x = model.scene.position.x
         cameraTarget.y = model.scene.position.y + 2
         cameraTarget.z = model.scene.position.z
-        //@ts-ignore
         if(controlRef.current) controlRef.current.target = cameraTarget
     }
 
@@ -133,7 +133,6 @@ const Player = () => {
 
     return (
         <>
-        {/*@ts-ignore*/}
         <OrbitControls ref={controlRef} />
         <primitive  object={model.scene} />
         </>

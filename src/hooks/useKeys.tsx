@@ -19,7 +19,7 @@ export const useKeys = () => {
         Space: "jump"
     } ;
 
-    const findKey = (key: string) => keys[key]
+    const findKey = (key: string) => keys[key as keyof typeof keys]
 
     useEffect(()=>{
 
